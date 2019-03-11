@@ -6,7 +6,7 @@
       <h1 class="display-3">Add a new campground.</h1>
     </div>
   </div>
-  <form action="/campgrounds" method="POST">
+  <form action="/campgrounds" method="POST" class="mb-2">
     <div class="form-group">
       <label for="campgroundName">Campground name</label>
       <input type="text" class="form-control" name="name" id="campgroundName" placeholder="Enter the campground name.">
@@ -16,9 +16,14 @@
       <input type="text" class="form-control" name="image" id="campgroundImage"
         placeholder="Enter the URL of the campground image.">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <a href="/campgrounds" class="btn btn-outline-danger">Go back</a>
+    <div class="form-group">
+      <label for="campgroundDescription">Description</label>
+      <textarea class="form-control" name="description" id="campgroundDescription"
+        placeholder="Enter a description of the campground."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary form-control">Submit</button>
   </form>
+  <a href="/campgrounds" class="btn btn-outline-danger">Cancel</a>
 </div>
 
 <% include partials/footer.ejs %>

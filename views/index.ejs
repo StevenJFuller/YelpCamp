@@ -4,12 +4,28 @@
   <div class="jumbotron">
     <div class="container">
       <h1 class="display-3">
-        YelpCamp Home
+        Campgrounds
       </h1>
       <hr>
-      <p class="lead">A website where users can see, book, rate, and upload campgrounds.</p>
-      <a href="/campgrounds" class="btn btn-primary">See Campgrounds</a>
+      <p class="lead">Below are some of our most popular campgrounds.</p>
+
+      <a href="/campgrounds/new" class="btn btn-outline-primary">Add a new
+        campground.</a>
     </div>
   </div>
+  <div class="row">
+    <% campgrounds.map(campground => { %>
+    <div class="col-sm-6 col-lg-4">
+      <div class="card mb-3">
+        <img src="<%= campground.image %>" alt="<%= campground.name %>" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title"><%= campground.name %></h5>
+          <a href="/campgrounds/<%= campground.id %>" class="btn btn-outline-primary">Check In</a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
 
-  <% include partials/footer.ejs %>
+<% include partials/footer.ejs %>
