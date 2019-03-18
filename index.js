@@ -1,6 +1,10 @@
+// Dependencies
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+
+// Models
+const Campground = require('./models/campground');
 
 const app = express();
 
@@ -9,14 +13,6 @@ mongoose.connect('mongodb://localhost:27017/yelp_camp', {
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
-const campgroundSchema = new mongoose.Schema({
-  name: String,
-  image: String,
-  description: String,
-});
-
-const Campground = mongoose.model('campground', campgroundSchema);
 
 // Campground.create({
 //   name: 'Fun Forest',
