@@ -8,4 +8,9 @@
     </div>
   </div>
   <img src="<%= campground.image %>" alt="<%= campground.name %>">
+  <% campground.comments.map(comment => { %>
+  <p>
+    <strong><%= comment.author %></strong> - <%= comment.text %>
+  </p>
+  <% }) %>
 </div>
