@@ -27,15 +27,18 @@ const seedDB = () => {
   Campground.remove({})
     .then(() => {
       console.log('Removed campgrounds.');
+      // Create campgrounds
       data.map(seed => {
         Campground.create(seed)
           .then(campground => {
             console.log('Campground created.');
+            // Create comments
             Comment.create({
               text: 'This place is great, but I wish there was internet.',
               author: 'Homer',
             })
               .then(comment => {
+                // Add comments to campground and save
                 campground.comments.push(comment);
                 campground.save();
                 console.log('Created new comment.');

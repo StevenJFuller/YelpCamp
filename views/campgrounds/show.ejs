@@ -1,4 +1,4 @@
-<% include partials/header.ejs %>
+<% include ../partials/header.ejs %>
 
 <div class="container">
   <div class="jumbotron">
@@ -8,9 +8,14 @@
     </div>
   </div>
   <img src="<%= campground.image %>" alt="<%= campground.name %>">
+  <p>
+    <a href="/campgrounds/<%= campground._id %>/comments/new" class="btn btn-outline-primary">&plus; new comment</a>
+  </p>
   <% campground.comments.map(comment => { %>
   <p>
     <strong><%= comment.author %></strong> - <%= comment.text %>
   </p>
   <% }) %>
 </div>
+
+<% include ../partials/footer %>
