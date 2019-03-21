@@ -3,11 +3,11 @@
 <div class="row">
   <div class="col-md-3">
     <p class="lead">Yelp Camp</p>
-    <ul class="list-group">
-      <li class="list-group-item active">Info 1</li>
-      <li class="list-group-item">Info 2</li>
-      <li class="list-group-item">Info 3</li>
-    </ul>
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action active">Info 1</a>
+      <a href="#" class="list-group-item list-group-item-action">Info 2</a>
+      <a href="#" class="list-group-item list-group-item-action">Info 3</a>
+    </div>
   </div>
   <div class="col-md-9">
     <div class="card mb-3">
@@ -21,8 +21,9 @@
       </div>
     </div>
     <div class="card bg-light">
-      <div class="text-right">
-        <a href="/campgrounds/<%= campground._id %>/comments/new" class="btn btn-success m-3">Leave a review</a>
+      <div class="d-flex justify-content-between align-items-center m-3">
+        <h5>Reviews</h5>
+        <a href="/campgrounds/<%= campground._id %>/comments/new" class="btn btn-success">Leave a review</a>
       </div>
       <% campground.comments.map(comment => { %>
       <div class="row">
